@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -51,7 +52,8 @@ export class LoginComponent implements OnInit {
     if (formData.email === localData && formData.password === localPass) {
       this.route.navigate(['/dashboard']);
     } else {
-      alert('Enter Valid Email or Passward');
+      // alert('Enter Valid Email or Passward');
+      Swal.fire('Enter Valid Email or Passward');
     }
   }
 
