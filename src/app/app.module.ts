@@ -14,19 +14,27 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { CreateProjectComponent } from './component/create-project/create-project.component';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateProjectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule,
-    MatCardModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule
+    MatCardModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule,
+    MatButtonModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
