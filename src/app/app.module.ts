@@ -20,6 +20,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { CreateProjectComponent } from './component/create-project/create-project.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ProjectListComponent } from './component/project-list/project-list.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
