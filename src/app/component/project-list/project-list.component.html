@@ -1,4 +1,7 @@
-<div>
+<div class="container">
+
+    <button mat-raised-button color="primary" (click)="toDashboard()">Home</button>
+
     <table class="table table-borderless">
         <thead>
             <tr>
@@ -10,11 +13,14 @@
                 <th scope="col">Department</th>
                 <th scope="col">Location</th>
                 <th scope="col">Status</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let p of projectList">
-                <td>{{p.projectName}}</td>
+                <td> {{p.projectName}}
+                    <p> {{p.startDate | date}} to {{p.endDate | date}} </p>
+                </td>
                 <td>{{p.type}}</td>
                 <td>{{p.division}}</td>
                 <td>{{p.category}}</td>
@@ -22,6 +28,11 @@
                 <td>{{p.department}}</td>
                 <td>{{p.location}}</td>
                 <td>{{p.status}}</td>
+                <td class="status-button">
+                    <button mat-flat-button color="primary">Start</button>
+                    <button mat-flat-button>Close</button>
+                    <button mat-flat-button>Cancle</button>
+                </td>
             </tr>
         </tbody>
     </table>

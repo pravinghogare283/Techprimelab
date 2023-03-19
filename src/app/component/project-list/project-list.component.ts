@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { RestService } from 'src/app/services/rest.service';
 export class ProjectListComponent implements OnInit {
   projectList: any;
 
-  constructor(private ser: RestService) { }
+  constructor(private ser: RestService, private route: Router) { }
 
   ngOnInit(): void {
     this.allProjects();
@@ -23,6 +24,10 @@ export class ProjectListComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
+  }
+
+  toDashboard() {
+    this.route.navigate(['/dashboard']);
   }
 
 }

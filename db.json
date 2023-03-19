@@ -1,18 +1,60 @@
 {
   "project": [
     {
-      "category": "Quality A",
-      "department": "Strategy",
-      "division": "Compressor",
-      "endDate": "Fri Mar 31 2023 00:00:00 GMT+0530 (India Standard Time)",
-      "location": "Pune",
-      "priority": "High",
       "projectName": "Line Filter",
       "reason": "Business",
+      "type": "Internal",
+      "division": "Compressor",
+      "category": "Quality A",
+      "priority": "High",
+      "department": "Strategy",
+      "endDate": "Fri Mar 31 2023 00:00:00 GMT+0530 (India Standard Time)",
+      "location": "Pune",
       "startDate": "Mon Mar 20 2023 00:00:00 GMT+0530 (India Standard Time)",
       "status": "Registered",
-      "type": "Internal",
       "id": 1
+    },
+    {
+      "projectName": "Tank Filter",
+      "reason": "Dealership",
+      "type": "External",
+      "division": "Filter",
+      "category": "Quality B",
+      "priority": "Medium",
+      "department": "Finance",
+      "location": "Delhi",
+      "startDate": "2023-03-17T18:30:00.000Z",
+      "endDate": "2023-03-16T18:30:00.000Z",
+      "status": "Registered",
+      "id": 2
+    },
+    {
+      "projectName": "Pumps Connector",
+      "reason": "Business",
+      "type": "External",
+      "division": "Pumps",
+      "category": "Quality C",
+      "priority": "High",
+      "department": "Maintenance",
+      "location": "Mumbai",
+      "startDate": "2023-03-20T18:30:00.000Z",
+      "endDate": "2023-03-31T18:30:00.000Z",
+      "status": "Registered",
+      "id": 3
+    },
+    {
+      "projectName": "Water Heater",
+      "reason": "Business",
+      "type": "Vender",
+      "division": "Water Heater",
+      "category": "Quality C",
+      "priority": "Low",
+      "department": "Maintenance",
+      "location": "Mumbai",
+      "startDate": "2023-03-19T18:30:00.000Z",
+      "endDate": "2023-03-30T18:30:00.000Z",
+      "status": "Registered",
+      "id": 4
     }
   ]
 }

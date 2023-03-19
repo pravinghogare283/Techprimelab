@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Project } from 'src/app/models/projectForm.model';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-create-project',
@@ -70,11 +72,12 @@ export class CreateProjectComponent implements OnInit {
     { value: 'Delhi' }
   ];
 
-  constructor() { }
+  constructor(private ser: RestService, private route: Router) { }
 
   ngOnInit(): void {
     this.createFormControls();
     this.createForm();
+    this.allProjects();
   }
 
   createFormControls() {
@@ -109,12 +112,27 @@ export class CreateProjectComponent implements OnInit {
 
   onSubmit() {
     if (this.projectForm.valid) {
-      console.log(this.projectForm.value);
+      this.ser.addProject(this.projectForm.value).subscribe((res) => {
+        console.log(res);
+        this.projectForm.reset();
+        this.allProjects();
+        this.route.navigate(['/project-list']);
+      });
     }
   }
 
   get f() {
     return this.projectForm.controls;
+  }
+
+  toDashboard() {
+    this.route.navigate(['/dashboard']);
+  }
+
+  allProjects() {
+    this.ser.getProjects().subscribe((res) => {
+      console.log(res)
+    });
   }
 
 }
