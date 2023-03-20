@@ -1,1 +1,21 @@
-<app-create-project></app-create-project>
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <div class="home-icon">
+            <div class="icon">
+                <mat-icon>timer</mat-icon>
+                <a href="" routerLink="/project-list"> <mat-icon>storage</mat-icon> </a>
+                <mat-icon>person_add</mat-icon>
+            </div>
+            <div class="icon">
+                <a href="" routerLink="/create-project"> <mat-icon>add</mat-icon> </a>
+                <a href="" routerLink=".."> <mat-icon>exit_to_app</mat-icon></a>
+            </div>
+        </div>
+
+    </mat-drawer>
+    <mat-drawer-content>Main content
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        <mat-icon>arrow_back_ios</mat-icon>
+        <mat-icon>person_outline</mat-icon>
+    </mat-drawer-content>
+</mat-drawer-container>

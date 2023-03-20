@@ -16,6 +16,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+
 
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { CreateProjectComponent } from './component/create-project/create-project.component';
@@ -36,7 +39,9 @@ import { ProjectListComponent } from './component/project-list/project-list.comp
     AppRoutingModule,
     BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule,
     MatCardModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule,
-    MatButtonModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule,
+    MatButtonModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatSidenavModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
