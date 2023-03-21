@@ -18,7 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { CreateProjectComponent } from './component/create-project/create-project.component';
@@ -40,7 +40,7 @@ import { ProjectListComponent } from './component/project-list/project-list.comp
     BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule,
     MatCardModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule,
     MatButtonModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatSidenavModule,
-    MatTableModule
+    MatTableModule, MatPaginatorModule
 
   ],
   providers: [],

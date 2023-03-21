@@ -1,250 +1,147 @@
 <div class="container">
-
     <button mat-raised-button color="primary" (click)="toDashboard()">Home</button>
-
     <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
         <div class="input">
             <div>
-                <mat-form-field appearance="outline">
+                <mat-icon>star_outline</mat-icon>
+                <mat-form-field appearance="outline" class="input-project">
                     <input matInput placeholder="Enter Project" formControlName="projectName"
                         [ngClass]="{ 'is-invalid': submitted && projectName.errors }">
                 </mat-form-field>
-                <mat-error *ngIf="projectName.invalid">Enter Project Name</mat-error>
+                <mat-error class="mt-2" *ngIf="projectName.invalid">Enter Project Name</mat-error>
             </div>
             <div>
                 <h3>1160 | Business</h3>
             </div>
         </div>
+        <div class="row mt-3">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-label>Reason</mat-label>
+                        <mat-form-field appearance="outline">
+                            <mat-select matNativeControl required formControlName="reason">
+                                <mat-option *ngFor="let r of reasons" [value]="r.value"
+                                    [ngClass]="{ 'is-invalid': submitted && reason.errors }">
+                                    {{r.value}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="reason.invalid">Select Reason</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-label>Type</mat-label>
+                        <mat-form-field appearance="outline">
+                            <mat-select matNativeControl required formControlName="type">
+                                <mat-option *ngFor="let t of types" [value]="t.value"
+                                    [ngClass]="{ 'is-invalid': submitted && type.errors }">
+                                    {{t.value}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="type.invalid">Select Type</mat-error>
 
-        <div class="row">
-            <div class="col-sm-4">
-                <mat-label>Reason</mat-label>
-                <mat-form-field appearance="outline">
-                    <mat-select matNativeControl required formControlName="reason">
-                        <mat-option *ngFor="let r of reasons" [value]="r.value"
-                            [ngClass]="{ 'is-invalid': submitted && reason.errors }">
-                            {{r.value}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="reason.invalid">Select Reason</mat-error>
-                </mat-form-field>
-            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-label>Division</mat-label>
+                        <mat-form-field appearance="outline">
+                            <mat-select matNativeControl required formControlName="division">
+                                <mat-option *ngFor="let d of divisions" [value]="d.value"
+                                    [ngClass]="{ 'is-invalid': submitted && division.errors }">
+                                    {{d.value}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="division.invalid">Select Division</mat-error>
 
-            <div class="col-sm-4">
-                <mat-label>Type</mat-label>
-                <mat-form-field appearance="outline">
-                    <mat-select matNativeControl required formControlName="type">
-                        <mat-option *ngFor="let t of types" [value]="t.value"
-                            [ngClass]="{ 'is-invalid': submitted && type.errors }">
-                            {{t.value}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="type.invalid">Select Type</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-label>Category</mat-label>
+                        <mat-form-field appearance="outline">
+                            <mat-select matNativeControl required formControlName="category">
+                                <mat-option *ngFor="let c of categories" [value]="c.value"
+                                    [ngClass]="{ 'is-invalid': submitted && category.errors }">
+                                    {{c.value}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="category.invalid">Select Category</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-label>Priority</mat-label>
+                        <mat-form-field appearance="outline">
+                            <mat-select matNativeControl required formControlName="priority">
+                                <mat-option *ngFor="let p of priorities" [value]="p.value"
+                                    [ngClass]="{ 'is-invalid': submitted && priority.errors }">
+                                    {{p.value}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="priority.invalid">Select Priority</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-label>Department</mat-label>
+                        <mat-form-field appearance="outline">
+                            <mat-select matNativeControl required formControlName="department">
+                                <mat-option *ngFor="let d of departments" [value]="d.value"
+                                    [ngClass]="{ 'is-invalid': submitted && department.errors }">
+                                    {{d.value}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="department.invalid">Select Department</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <mat-label>Start Date As Per Business Plane</mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput [matDatepicker]="picker" formControlName="startDate"
+                                [ngClass]="{ 'is-invalid': submitted && startDate.errors }">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error *ngIf="startDate.invalid">Enter Start Date</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-label>End Date As Per Business Plane</mat-label>
+                        <mat-form-field appearance="outline">
+                            <input matInput [matDatepicker]="picker1" formControlName="endDate"
+                                [ngClass]="{ 'is-invalid': submitted && endDate.errors }">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                            <mat-error *ngIf="endDate.invalid">Enter End Date</mat-error>
 
-                </mat-form-field>
-            </div>
-
-            <div class="col-sm-4">
-                <mat-label>Division</mat-label>
-                <mat-form-field appearance="outline">
-                    <mat-select matNativeControl required formControlName="division">
-                        <mat-option *ngFor="let d of divisions" [value]="d.value"
-                            [ngClass]="{ 'is-invalid': submitted && division.errors }">
-                            {{d.value}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="division.invalid">Select Division</mat-error>
-
-                </mat-form-field>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-4">
-                <mat-label>Category</mat-label>
-                <mat-form-field appearance="outline">
-                    <mat-select matNativeControl required formControlName="category">
-                        <mat-option *ngFor="let c of categories" [value]="c.value"
-                            [ngClass]="{ 'is-invalid': submitted && category.errors }">
-                            {{c.value}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="category.invalid">Select Category</mat-error>
-                </mat-form-field>
-            </div>
-
-            <div class="col-sm-4">
-                <mat-label>Priority</mat-label>
-                <mat-form-field appearance="outline">
-                    <mat-select matNativeControl required formControlName="priority">
-                        <mat-option *ngFor="let p of priorities" [value]="p.value"
-                            [ngClass]="{ 'is-invalid': submitted && priority.errors }">
-                            {{p.value}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="priority.invalid">Select Priority</mat-error>
-                </mat-form-field>
-            </div>
-
-            <div class="col-sm-4">
-                <mat-label>Department</mat-label>
-                <mat-form-field appearance="outline">
-                    <mat-select matNativeControl required formControlName="department">
-                        <mat-option *ngFor="let d of departments" [value]="d.value"
-                            [ngClass]="{ 'is-invalid': submitted && department.errors }">
-                            {{d.value}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="department.invalid">Select Department</mat-error>
-                </mat-form-field>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-4">
-                <mat-label>Start Date As Per Business Plane</mat-label>
-                <mat-form-field appearance="outline">
-                    <input matInput [matDatepicker]="picker" formControlName="startDate"
-                        [ngClass]="{ 'is-invalid': submitted && startDate.errors }">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                    <mat-error *ngIf="startDate.invalid">Enter Start Date</mat-error>
-                </mat-form-field>
-            </div>
-
-            <div class="col-sm-4">
-                <mat-label>End Date As Per Business Plane</mat-label>
-                <mat-form-field appearance="outline">
-                    <input matInput [matDatepicker]="picker1" formControlName="endDate"
-                        [ngClass]="{ 'is-invalid': submitted && endDate.errors }">
-                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                    <mat-datepicker #picker1></mat-datepicker>
-                    <mat-error *ngIf="endDate.invalid">Enter End Date</mat-error>
-
-                </mat-form-field>
-            </div>
-
-            <div class="col-sm-4">
-                <mat-label>Location</mat-label>
-                <mat-form-field appearance="outline">
-                    <mat-select matNativeControl required formControlName="location">
-                        <mat-option *ngFor="let l of locations" [value]="l.value"
-                            [ngClass]="{ 'is-invalid': submitted && location.errors }">
-                            {{l.value}}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="location.invalid">Select Location</mat-error>
-                </mat-form-field>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label>Status</label>
-                    <!-- <mat-form-field appearance="outline">
-                        <input matInput placeholder="Enter Project" formControlName="status" value="Registered"
-                            [ngClass]="{ 'is-invalid': submitted && status.errors }">
-                    </mat-form-field> -->
-
-                    <mat-form-field appearance="outline">
-                        <input matInput value="Sushi" formControlName="status">
-                    </mat-form-field>
-
-                    <mat-error *ngIf="status.invalid">Select Status</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-4">
+                        <mat-label>Location</mat-label>
+                        <mat-form-field appearance="outline">
+                            <mat-select matNativeControl required formControlName="location">
+                                <mat-option *ngFor="let l of locations" [value]="l.value"
+                                    [ngClass]="{ 'is-invalid': submitted && location.errors }">
+                                    {{l.value}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="location.invalid">Select Location</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label>Status</label>
+                            <mat-form-field appearance="outline">
+                                <input matInput value="Sushi" formControlName="status">
+                            </mat-form-field>
+                            <mat-error *ngIf="status.invalid">Select Status</mat-error>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
                 </div>
             </div>
         </div>
     </form>
-    <div>
-        <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
-    </div>
-
-
-
-
-
-
-
-
-    <!-- <form [formGroup]="projectForm">
-        <div class="row">
-            <div class="col-sm-4">
-                <label>Reason</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of reasons">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Type</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of types">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Division</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of divisions">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-4">
-                <label>Category</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of categories">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Priority</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of priorities">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Department</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of departments">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-4">
-                <label>Reason</label>
-                <div class='input-group date' id='datetimepicker6'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <label>Type</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of types">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Location</label>
-                <select class="form-select" required="required">
-                    <option *ngFor="let p of locations">
-                        {{p.viewValue}}
-                    </option>
-                </select>
-            </div>
-        </div>
-    </form> -->
 </div>

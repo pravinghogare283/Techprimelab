@@ -1,21 +1,61 @@
 <mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened>
-        <div class="home-icon">
-            <div class="icon">
+        <div class="icon">
+            <div class="icon-top">
                 <mat-icon>timer</mat-icon>
                 <a href="" routerLink="/project-list"> <mat-icon>storage</mat-icon> </a>
                 <mat-icon>person_add</mat-icon>
             </div>
-            <div class="icon">
+            <div class="icon-bottom">
                 <a href="" routerLink="/create-project"> <mat-icon>add</mat-icon> </a>
                 <a href="" routerLink=".."> <mat-icon>exit_to_app</mat-icon></a>
             </div>
         </div>
 
     </mat-drawer>
-    <mat-drawer-content>Main content
-        <mat-icon>keyboard_arrow_left</mat-icon>
+    <mat-drawer-content>
+        <div>
+            <div class="login d-flex">
+                <mat-icon class="back-arrow" routerLink="..">arrow_back_ios</mat-icon>
+                <h1 class="dashboard">Dashboard</h1>
+                <div class="c">
+                    <div class="h">
+                        <div class="j">
+                            <div class="k">
+                                <div class="l">
+                                    <h4>Registered</h4>
+                                    <h1>8</h1>
+                                </div>
+                                <div class="l">
+                                    <h4>Closed</h4>
+                                    <h1>3</h1>
+                                </div>
+                                <div class="l">
+                                    <h4>Running</h4>
+                                    <h1>3</h1>
+                                </div>
+                                <div class="l">
+                                    <h4> Closure Delay </h4>
+                                    <h1>4</h1>
+                                </div>
+                                <div class="l">
+                                    <h4>Canclled</h4>
+                                    <h1>2</h1>
+                                </div>
+                            </div>
+                            <div>
+                                <h1>Projet Plan Vs Actual Plan</h1>
+                                <h1>Registration</h1>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- <mat-icon>keyboard_arrow_left</mat-icon>
         <mat-icon>arrow_back_ios</mat-icon>
-        <mat-icon>person_outline</mat-icon>
+        <mat-icon>person_outline</mat-icon> -->
     </mat-drawer-content>
 </mat-drawer-container>
