@@ -1,5 +1,67 @@
-.status-button{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.status-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+::ng-deep .mat-elevation-z8 {
+  box-shadow: none !important;
+}
+
+::ng-deep th.mat-header-cell {
+  border-bottom: none !important;
+}
+
+::ng-deep th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  border-bottom: none;
+  font-weight: 500 !important;
+}
+
+::ng-deep .mat-header-cell {
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+::ng-deep.mat-cell,
+.mat-footer-cell {
+  font-size: 16px;
+}
+
+::ng-deep tr.mat-row,
+tr.mat-footer-row {
+  height: 60px !important;
+}
+
+::ng-deep .project-dates {
+  font-size: 12px;
+}
+
+::ng-deep .mat-flat-button.mat-primary {
+  background-color: #4bb9e5 !important;
+  border-radius: 20px !important;
+  width: 70px !important;
+  border: none !important;
+}
+
+::ng-deepbutton.mat-focus-indicator.mat-flat-button.mat-button-base {
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+td.mat-cell.cdk-cell.cdk-column-action.mat-column-action.ng-star-inserted {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly
 }

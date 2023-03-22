@@ -24,6 +24,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { CreateProjectComponent } from './component/create-project/create-project.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ProjectListComponent } from './component/project-list/project-list.component';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { ProjectListComponent } from './component/project-list/project-list.comp
     BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule,
     MatCardModule, MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule,
     MatButtonModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatSidenavModule,
-    MatTableModule, MatPaginatorModule
+    MatTableModule, MatPaginatorModule, MatSortModule
 
   ],
   providers: [],
