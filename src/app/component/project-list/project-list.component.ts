@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort, Sort } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { RestService } from 'src/app/services/rest.service';
@@ -45,5 +45,4 @@ export class ProjectListComponent implements OnInit {
   toDashboard() {
     this.route.navigate(['/dashboard']);
   }
-
 }

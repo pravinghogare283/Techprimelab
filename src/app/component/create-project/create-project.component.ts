@@ -43,7 +43,6 @@ export class CreateProjectComponent implements OnInit {
     { value: 'Pumps' },
     { value: 'Glass' },
     { value: 'Water Heater' }
-
   ];
 
   categories: Project[] = [
@@ -121,18 +120,15 @@ export class CreateProjectComponent implements OnInit {
     }
   }
 
-  get f() {
-    return this.projectForm.controls;
+  allProjects() {
+    this.ser.getProjects().subscribe((res) => { });
   }
 
   toDashboard() {
     this.route.navigate(['/dashboard']);
   }
 
-  allProjects() {
-    this.ser.getProjects().subscribe((res) => {
-      console.log(res)
-    });
+  get f() {
+    return this.projectForm.controls;
   }
-
 }
