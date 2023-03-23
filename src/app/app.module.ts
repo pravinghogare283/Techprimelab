@@ -25,6 +25,7 @@ import { CreateProjectComponent } from './component/create-project/create-projec
 import { MatNativeDateModule } from '@angular/material/core';
 import { ProjectListComponent } from './component/project-list/project-list.component';
 import { MatSortModule } from '@angular/material/sort';
+import { GraphComponent } from './component/graph/graph.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { MatSortModule } from '@angular/material/sort';
     LoginComponent,
     DashboardComponent,
     CreateProjectComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
