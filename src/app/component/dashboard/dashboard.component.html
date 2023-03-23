@@ -3,56 +3,43 @@
         <div class="icon">
             <div class="icon-top">
                 <mat-icon>timer</mat-icon>
-                <a href="" routerLink="/project-list"> <mat-icon>storage</mat-icon> </a>
+                <a (click)="onList()"> <mat-icon>storage</mat-icon> </a>
                 <mat-icon>person_add</mat-icon>
             </div>
             <div class="icon-bottom">
-                <a href="" routerLink="/create-project"> <mat-icon>add</mat-icon> </a>
+                <a (click)="onAdd()"> <mat-icon>add</mat-icon> </a>
                 <a href="" routerLink=".."> <mat-icon>exit_to_app</mat-icon></a>
             </div>
         </div>
-
     </mat-drawer>
     <mat-drawer-content>
         <div>
             <div class="login d-flex">
-                <mat-icon class="back-arrow" routerLink="..">arrow_back_ios</mat-icon>
-                <h1 class="dashboard">Dashboard</h1>
-                <div class="c">
-                    <div class="h">
-                        <div class="j">
-                            <div class="k">
-                                <div class="l">
-                                    <h4>Registered</h4>
-                                    <h1>8</h1>
-                                </div>
-                                <div class="l">
-                                    <h4>Closed</h4>
-                                    <h1>3</h1>
-                                </div>
-                                <div class="l">
-                                    <h4>Running</h4>
-                                    <h1>3</h1>
-                                </div>
-                                <div class="l">
-                                    <h4> Closure Delay </h4>
-                                    <h1>4</h1>
-                                </div>
-                                <div class="l">
-                                    <h4>Canclled</h4>
-                                    <h1>2</h1>
-                                </div>
-                            </div>
+                <mat-icon class="back-arrow" (click)="changeRoute()" *ngIf="graph">arrow_back_ios</mat-icon>
+                <mat-icon class="back-arrow" (click)="changeRoute()" *ngIf="projectList">arrow_back_ios</mat-icon>
+                <mat-icon class="back-arrow" (click)="changeRoute()" *ngIf="createProject">arrow_back_ios</mat-icon>
+
+                <h1 class="dashboard" *ngIf="graph">Dashboard</h1>
+                <h1 class="dashboard" *ngIf="projectList">Projects Listing</h1>
+                <h1 class="dashboard" *ngIf="createProject">Create Project</h1>
+                <div class="dashboard-1">
+                    <div class="dashboard-2">
+                        <div class="dashboard-3">
                             <div>
-                                <h1>Projet Plan Vs Actual Plan</h1>
-                                <h1>Registration</h1>
+                                <ng-container *ngIf="graph">
+                                    <app-graph></app-graph>
+                                </ng-container>
+                                <ng-container *ngIf="createProject">
+                                    <app-create-project></app-create-project>
+                                </ng-container>
+                                <ng-container *ngIf="projectList">
+                                    <app-project-list></app-project-list>
+                                </ng-container>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- <mat-icon>keyboard_arrow_left</mat-icon>
         <mat-icon>arrow_back_ios</mat-icon>

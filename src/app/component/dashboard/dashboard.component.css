@@ -60,7 +60,7 @@ a {
     padding: 22px;
 }
 
-.c {
+.dashboard-1 {
     position: absolute;
     height: -webkit-fill-available;
     padding: 0px 15px 0px 15px;
@@ -68,40 +68,8 @@ a {
     width: 100%;
 }
 
-.h {
+.dashboard-2 {
     height: -webkit-fill-available;
     background-color: white;
     border-radius: 10px;
-}
-
-.j {
-    padding: 15px;
-}
-
-.k {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: rgb(237 242 243);
-    padding: inherit;
-}
-
-.l {
-    /* height: 100px; */
-    width: 220px;
-    background: white;
-    border-radius: 5px;
-    border-left: 6px solid #57d6ff;
-}
-
-h4{
-    padding: 10px 0 0 10px;
-    margin: 0 !important;
-    color: gray;
-}
-
-h1{
-    font-size: xx-large;
-    font-weight: 500;
-    padding-left: 10px;
 }
