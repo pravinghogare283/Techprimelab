@@ -1,0 +1,34 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(237 242 243);
+    padding: inherit;
+}
+
+.project-count {
+    width: 220px;
+    background: white;
+    border-radius: 5px;
+    border-left: 6px solid #57d6ff;
+}
+
+.project {
+    padding: 15px;
+}
+
+h4 {
+    padding: 10px 0 0 10px;
+    margin: 0 !important;
+    color: gray;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+h2 {
+    padding: 10px 10px 10px 30px;
+}
