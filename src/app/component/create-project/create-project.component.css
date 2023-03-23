@@ -102,7 +102,7 @@
   width: 12em;
 }
 
-::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
   border: 1px solid red !important;
 }
 
@@ -139,7 +139,21 @@ hr {
 
 @media screen and (max-width: 425px) {
   .input-project {
-    width: 245px;
+    width: 300px;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .input-project {
+    width: 210px !important;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .input-project {
+    width: 258px;
     padding-left: 10px;
   }
 }

@@ -73,3 +73,14 @@ a {
     background-color: white;
     border-radius: 10px;
 }
+
+/* Mobile View */
+@media(max-width: 768px) {
+    mat-drawer {
+        width: 10%;
+    }
+
+    .dashboard-2 {
+        height: auto;
+    }
+}

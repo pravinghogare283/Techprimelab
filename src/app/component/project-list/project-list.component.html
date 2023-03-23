@@ -10,7 +10,7 @@
         <table mat-table [dataSource]="dataSource" matSort>
 
             <!-- projectName Column -->
-            <ng-container matColumnDef="projectName">
+            <ng-container  data-label="Project Name" matColumnDef="projectName">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Project Name </th>
                 <td mat-cell *matCellDef="let row">
                     {{row.projectName}} <br>
@@ -90,3 +90,32 @@
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
     </div>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>Reason</th>
+            <th>Type</th>
+            <th>Division</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Department</th>
+            <th>Location</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of projectList">
+            <td data-label="Project Name">{{d.projectName}}</td>
+            <td data-label="Reason">{{d.reason}}</td>
+            <td data-label="Type">{{d.type}}</td>
+            <td data-label="Division">{{d.division}}</td>
+            <td data-label="Category">{{d.category}}</td>
+            <td data-label="Priority">{{d.priority}}</td>
+            <td data-label="Department">{{d.department}}</td>
+            <td data-label="Location">{{d.location}}</td>
+            <td data-label="Status">{{d.status}}</td>
+        </tr>
+    </tbody>
+</table>

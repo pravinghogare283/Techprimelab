@@ -32,3 +32,39 @@ h1 {
 h2 {
     padding: 10px 10px 10px 30px;
 }
+
+@media(max-width: 767px) {
+    .home {
+        flex-direction: column;
+    }
+
+    .project-count {
+        width: 200px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .project-count {
+        width: 288px !important;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .project-count {
+        width: 244px !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .project-count {
+        width: 195px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-count {
+        width: 100px;
+    }
+}
