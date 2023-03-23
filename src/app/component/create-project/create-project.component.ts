@@ -91,7 +91,7 @@ export class CreateProjectComponent implements OnInit {
     this.location = new FormControl('', [Validators.required]);
     this.startDate = new FormControl('', [Validators.required]);
     this.endDate = new FormControl('', [Validators.required]);
-    this.status = new FormControl('');
+    this.status = new FormControl('Registered');
   }
 
   createForm() {

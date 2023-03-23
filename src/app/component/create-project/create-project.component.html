@@ -1,5 +1,5 @@
-<div class="container">
-    <button mat-raised-button color="primary" (click)="toDashboard()">Home</button>
+<div class="container-fluid">
+    <!-- <button mat-raised-button color="primary" (click)="toDashboard()">Home</button> -->
     <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
         <div class="input">
             <div>
@@ -8,12 +8,13 @@
                     <input matInput placeholder="Enter Project" formControlName="projectName"
                         [ngClass]="{ 'is-invalid': submitted && projectName.errors }">
                 </mat-form-field>
-                <mat-error class="mt-2" *ngIf="projectName.invalid">Enter Project Name</mat-error>
+                <mat-error *ngIf="projectName.invalid">Enter Project Name</mat-error>
             </div>
             <div>
                 <h3>1160 | Business</h3>
             </div>
         </div>
+        <hr>
         <div class="row mt-3">
             <div class="col-sm-8">
                 <div class="row">
@@ -98,8 +99,8 @@
                     <div class="col-sm-4">
                         <mat-label>Start Date As Per Business Plane</mat-label>
                         <mat-form-field appearance="outline">
-                            <input matInput [matDatepicker]="picker" formControlName="startDate"
-                                [ngClass]="{ 'is-invalid': submitted && startDate.errors }">
+                            <input matInput [matDatepicker]="picker" placeholder="D Month, Yr"
+                                formControlName="startDate" [ngClass]="{ 'is-invalid': submitted && startDate.errors }">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                             <mat-error *ngIf="startDate.invalid">Enter Start Date</mat-error>
@@ -108,8 +109,8 @@
                     <div class="col-sm-4">
                         <mat-label>End Date As Per Business Plane</mat-label>
                         <mat-form-field appearance="outline">
-                            <input matInput [matDatepicker]="picker1" formControlName="endDate"
-                                [ngClass]="{ 'is-invalid': submitted && endDate.errors }">
+                            <input matInput [matDatepicker]="picker1" placeholder="D Month, Yr"
+                                formControlName="endDate" [ngClass]="{ 'is-invalid': submitted && endDate.errors }">
                             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                             <mat-datepicker #picker1></mat-datepicker>
                             <mat-error *ngIf="endDate.invalid">Enter End Date</mat-error>
@@ -129,17 +130,22 @@
                         </mat-form-field>
                     </div>
                     <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4"></div>
                         <div class="col-sm-4">
-                            <label>Status</label>
-                            <mat-form-field appearance="outline">
-                                <input matInput value="Sushi" formControlName="status">
-                            </mat-form-field>
-                            <mat-error *ngIf="status.invalid">Select Status</mat-error>
+                            <div class="field-status">
+                                <div>
+                                    <label>Status: </label>
+                                </div>
+                                <div>
+                                    <input matInput formControlName="status">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+                <div class="save-button mt-5">
+                    <button mat-raised-button color="primary" (click)="onSubmit()">Save Project</button>
                 </div>
             </div>
         </div>

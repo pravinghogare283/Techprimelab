@@ -43,11 +43,106 @@
   width: 200px !important;
 }
 
-::ng-deep mat-error#mat-error-0{
-padding-left: 43px;
+::ng-deep mat-error#mat-error-0 {
+  padding-left: 43px;
 }
 
-/* .form-select {
-  background-color: #e9ecef;
-  border-radius: 0 !important;
-} */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
+}
+
+::ng-deep .mat-form-field-flex.ng-tns-c68-1 {
+  height: 80px !important;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 15px !important;
+}
+
+::ng-deep.mat-form-field-outline.ng-tns-c68-14.ng-star-inserted {
+  background-color: white !important;
+}
+
+::ng-deep .mat-form-field-outline.ng-tns-c68-15.ng-star-inserted {
+  background-color: white !important;
+}
+
+::ng-deep .mat-form-field-outline.ng-tns-c68-18.ng-star-inserted {
+  background-color: white !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border: none !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start,
+.mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border: none !important;
+}
+
+::ng-deep .mat-form-field-outline.mat-form-field-outline-thick.ng-tns-c68-1.ng-star-inserted {
+  border: 1px solid !important;
+  border-radius: 10px !important;
+}
+
+::ng-deep .mat-form-field-outline.ng-tns-c68-1.ng-star-inserted {
+  border-radius: 10px !important;
+}
+
+.field-status {
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+::ng-deep button.mat-focus-indicator.mat-raised-button.mat-button-base.mat-primary {
+  background-color: #364cca !important;
+  border-radius: 20px !important;
+  border: none !important;
+  width: 12em;
+}
+
+.save-button {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  margin: 0rem 0 !important;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}
+
+/* Mobile View */
+@media screen and (max-width: 575px) {
+  ::ng-deep .mat-form-field-flex.ng-tns-c68-1 {
+    height: 60px !important;
+  }
+
+  .input-project {
+    width: 290px;
+    padding-left: 20px;
+  }
+
+  .input {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  /* .input-project {
+    width: 240px;
+    padding-left: 10px;
+  } */
+}
+
+@media screen and (max-width: 425px) {
+  .input-project {
+    width: 245px;
+    padding-left: 10px;
+  }
+}
