@@ -102,6 +102,10 @@
   width: 12em;
 }
 
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+  border: 1px solid red !important;
+}
+
 .save-button {
   display: flex;
   justify-content: center;
