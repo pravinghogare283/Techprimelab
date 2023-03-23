@@ -1,41 +1,45 @@
-<div class="login">
-    <div class="center-component">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-md-4">
-                    <mat-card>
-                        <mat-card-content>
-                            <form novalidate class="form" [formGroup]="loginForm" (ngSubmit)="login()">
-                                <div>
+<div class="home">
+    <div class="login">
+        <div class="center-component">
+            <div class="container">
+                <!-- <div class="logo" style="background-image: url(../../../assets/logo.jpg)"></div> -->
+                <div>
+                    <img src="../../../assets/logo.jpg" alt="">
+                    <h3 class="text-white mt-4">Online Project Management</h3>
+                </div>
+                <div class="row justify-content-md-center mt-4">
+                    <div class="col-md-5">
+                        <mat-card>
+                            <mat-card-content>
+                                <form novalidate class="form" [formGroup]="loginForm" (ngSubmit)="login()">
                                     <div>
-                                        <h2>Login to get started</h2>
-
+                                        <div>
+                                            <h2>Login to get started</h2>
+                                        </div>
+                                        <div>
+                                            <mat-form-field class="full-width" appearance="outline">
+                                                <mat-label>Email Address</mat-label>
+                                                <input matInput placeholder="admin@gmail.com" value=""
+                                                    formControlName="email" required [pattern]="emailPattern">
+                                                <mat-error *ngIf="email.invalid">Email is required</mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div>
+                                            <mat-form-field class="full-width" appearance="outline">
+                                                <mat-label>Password</mat-label>
+                                                <input matInput placeholder="password" value="" type="password"
+                                                    formControlName="password" required minlength="6">
+                                                <mat-error *ngIf="password.invalid">Password is required</mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div>
+                                            <button mat-raised-button type="submit" color="primary">Login</button>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <mat-form-field class="full-width" appearance="outline">
-                                            <mat-label>Email Address</mat-label>
-                                            <input matInput placeholder="admin@gmail.com" value=""
-                                                formControlName="email" required [pattern]="emailPattern">
-                                            <mat-error *ngIf="email.invalid">Email is required</mat-error>
-                                        </mat-form-field>
-                                    </div>
-                                    <div>
-                                        <mat-form-field class="full-width" appearance="outline">
-                                            <mat-label>Password</mat-label>
-                                            <input matInput placeholder="password" value="" type="password"
-                                                formControlName="password" required minlength="6">
-                                            <mat-error *ngIf="password.invalid">Password is required</mat-error>
-                                        </mat-form-field>
-                                    </div>
-
-                                    <div>
-                                        <button mat-raised-button type="submit" color="primary">Login</button>
-
-                                    </div>
-                                </div>
-                            </form>
-                        </mat-card-content>
-                    </mat-card>
+                                </form>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
                 </div>
             </div>
         </div>

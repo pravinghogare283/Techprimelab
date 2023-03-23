@@ -4,6 +4,14 @@
     border-bottom-left-radius: 100px;
 }
 
+.home {
+    height: 100%;
+}
+
+.justify-content-md-center {
+    height: 165px;
+}
+
 /* mat-card {
     height: 350px;
 } */
@@ -11,7 +19,7 @@
 .center-component {
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -39,4 +47,27 @@
 
 .mat-mdc-raised-button:not(:disabled) {
     background-color: #3f51b5
+}
+
+img {
+    width: 12%;
+    aspect-ratio: 1.5;
+}
+
+@media(max-width: 500px) {
+    img {
+        width: 40%;
+        aspect-ratio: 1.5;
+    }
+}
+
+@media(max-width: 768px) {
+    img {
+        width: 50%;
+        aspect-ratio: 1.5;
+    }
+
+    /* .col-md-5 {
+        width: 55% !important;
+    } */
 }
