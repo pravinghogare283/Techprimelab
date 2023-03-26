@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -12,9 +12,8 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class ProjectListComponent implements OnInit {
   projectList: any;
-
-  displayedColumns: string[] = ['projectName', 'reason', 'type', 'division', 'category', 'priority', 'department', 'location', 'status', 'action'];
   dataSource: any;
+  displayedColumns: string[] = ['projectName', 'reason', 'type', 'division', 'category', 'priority', 'department', 'location', 'status', 'action'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -34,16 +33,16 @@ export class ProjectListComponent implements OnInit {
   allProjects() {
     this.ser.getProjects().subscribe((res) => {
       this.projectList = res;
-      const as = this.projectList.filter((val: any) => val.status === 'Start');
-      const asc = this.projectList.filter((val: any) => val.status === 'Close');
-      const asa = this.projectList.filter((val: any) => val.status === 'Cancle');
-      const asaa = this.projectList.filter((val: any) => val.status === 'Registered');
+      const started = this.projectList.filter((val: any) => val.status === 'Start');
+      const closed = this.projectList.filter((val: any) => val.status === 'Close');
+      const cancled = this.projectList.filter((val: any) => val.status === 'Cancle');
+      const registered = this.projectList.filter((val: any) => val.status === 'Registered');
 
-      localStorage.setItem('regCount', asaa.length)
-      localStorage.setItem('cancleCount', asa.length)
-      localStorage.setItem('closeCount', asc.length)
-      localStorage.setItem('startCount', as.length)
-      const statusCount = asaa.length;
+      localStorage.setItem('regCount', registered.length);
+      localStorage.setItem('cancleCount', cancled.length);
+      localStorage.setItem('closeCount', closed.length);
+      localStorage.setItem('startCount', started.length);
+
       this.dataSource = new MatTableDataSource(this.projectList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -52,7 +51,7 @@ export class ProjectListComponent implements OnInit {
     });
   }
 
-  onStart(el: any, label: any) {
+  onClick(el: any, label: string) {
     let statusID = el.id;
     el.status = label;
     this.ser.updateProject(statusID, el).subscribe((res) => { });

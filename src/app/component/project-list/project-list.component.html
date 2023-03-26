@@ -50,9 +50,9 @@
             <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
                 <td mat-cell *matCellDef="let row">
-                    <button mat-flat-button (click)="onStart(row, 'Start')" color="primary">Start</button>
-                    <button mat-flat-button (click)="onStart(row, 'Close')">Close</button>
-                    <button mat-flat-button (click)="onStart(row, 'Cancle')">Cancle</button>
+                    <button mat-flat-button (click)="onClick(row, 'Start')" color="primary">Start</button>
+                    <button mat-flat-button (click)="onClick(row, 'Close')">Close</button>
+                    <button mat-flat-button (click)="onClick(row, 'Cancle')">Cancle</button>
                 </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

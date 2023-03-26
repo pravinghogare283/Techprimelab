@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
     if (formData.email === localData && formData.password === localPass) {
       this.route.navigate(['/dashboard']);
     } else {
-      // alert('Enter Valid Email or Passward');
       Swal.fire('Enter Valid Email or Passward');
     }
   }
