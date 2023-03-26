@@ -11,7 +11,7 @@
       "endDate": "Fri Mar 31 2023 00:00:00 GMT+0530 (India Standard Time)",
       "location": "Pune",
       "startDate": "Mon Mar 20 2023 00:00:00 GMT+0530 (India Standard Time)",
-      "status": "Registered",
+      "status": "Start",
       "id": 1
     },
     {
@@ -25,7 +25,7 @@
       "location": "Delhi",
       "startDate": "2023-03-17T18:30:00.000Z",
       "endDate": "2023-03-16T18:30:00.000Z",
-      "status": "Registered",
+      "status": "Cancle",
       "id": 2
     },
     {
@@ -39,7 +39,7 @@
       "location": "Mumbai",
       "startDate": "2023-03-20T18:30:00.000Z",
       "endDate": "2023-03-31T18:30:00.000Z",
-      "status": "Registered",
+      "status": "Close",
       "id": 3
     },
     {
@@ -81,7 +81,7 @@
       "location": "Mumbai",
       "startDate": "2023-03-24T18:30:00.000Z",
       "endDate": "2023-04-03T18:30:00.000Z",
-      "status": "Registered",
+      "status": "Start",
       "id": 6
     },
     {
@@ -95,7 +95,7 @@
       "location": "Mumbai",
       "startDate": "2023-03-24T18:30:00.000Z",
       "endDate": "2023-04-03T18:30:00.000Z",
-      "status": "Registered",
+      "status": "Cancle",
       "id": 7
     },
     {

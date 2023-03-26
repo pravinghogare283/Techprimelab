@@ -15,4 +15,8 @@ export class RestService {
   addProject(data: any) {
     return this.http.post("http://localhost:3000/project", data);
   }
+
+  updateProject(id: number, data: any) {
+    return this.http.put("http://localhost:3000/project/" + id, data);
+  }
 }

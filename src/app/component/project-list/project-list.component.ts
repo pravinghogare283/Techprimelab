@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -34,12 +34,29 @@ export class ProjectListComponent implements OnInit {
   allProjects() {
     this.ser.getProjects().subscribe((res) => {
       this.projectList = res;
+      const as = this.projectList.filter((val: any) => val.status === 'Start');
+      const asc = this.projectList.filter((val: any) => val.status === 'Close');
+      const asa = this.projectList.filter((val: any) => val.status === 'Cancle');
+      const asaa = this.projectList.filter((val: any) => val.status === 'Registered');
+
+      localStorage.setItem('regCount', asaa.length)
+      localStorage.setItem('cancleCount', asa.length)
+      localStorage.setItem('closeCount', asc.length)
+      localStorage.setItem('startCount', as.length)
+      const statusCount = asaa.length;
       this.dataSource = new MatTableDataSource(this.projectList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     }, (err) => {
       console.log(err);
     });
+  }
+
+  onStart(el: any, label: any) {
+    let statusID = el.id;
+    el.status = label;
+    this.ser.updateProject(statusID, el).subscribe((res) => { });
+    this.allProjects();
   }
 
   toDashboard() {
