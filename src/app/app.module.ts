@@ -26,7 +26,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ProjectListComponent } from './component/project-list/project-list.component';
 import { MatSortModule } from '@angular/material/sort';
 import { GraphComponent } from './component/graph/graph.component';
-import { ChartComponent } from './component/chart/chart.component';
 
 
 @NgModule({
@@ -36,8 +35,7 @@ import { ChartComponent } from './component/chart/chart.component';
     DashboardComponent,
     CreateProjectComponent,
     ProjectListComponent,
-    GraphComponent,
-    ChartComponent
+    GraphComponent
   ],
   imports: [
     BrowserModule,
