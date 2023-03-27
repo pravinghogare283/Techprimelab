@@ -8,7 +8,8 @@ mat-drawer {
 }
 
 .login {
-    background-color: #364cca;
+    /* background-color: #364cca; */
+    background-image: linear-gradient(to left, rgb(68, 118, 255), rgb(26, 26, 168) );
     height: 30vh;
     border-bottom-left-radius: 100px;
 }
@@ -62,7 +63,7 @@ a {
 
 .dashboard-1 {
     position: absolute;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
     padding: 0px 15px 0px 15px;
     margin-top: 15vh;
     width: 100%;
@@ -72,6 +73,13 @@ a {
     height: -webkit-fill-available;
     background-color: white;
     border-radius: 10px;
+}
+
+.dash-sorting {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 70vw;
 }
 
 /* Mobile View */

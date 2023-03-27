@@ -115,7 +115,7 @@ export class CreateProjectComponent implements OnInit {
         console.log(res);
         this.projectForm.reset();
         this.allProjects();
-        this.route.navigate(['/project-list']);
+        this.route.navigate(['/dashboard']);
       });
     }
   }

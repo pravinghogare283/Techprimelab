@@ -20,7 +20,16 @@
                 <mat-icon class="back-arrow" (click)="changeRoute()" *ngIf="createProject">arrow_back_ios</mat-icon>
 
                 <h1 class="dashboard" *ngIf="graph">Dashboard</h1>
-                <h1 class="dashboard" *ngIf="projectList">Projects Listing</h1>
+
+                <div class="d-flex" *ngIf="projectList">
+                    <div>
+                        <h1 class="dashboard">Projects Listing</h1>
+                    </div>
+                    <div class="dash-sorting">
+                        <h3 class="dashboard">Department</h3>
+                        <h3 class="dashboard">Location</h3>
+                    </div>
+                </div>
                 <h1 class="dashboard" *ngIf="createProject">Create Project</h1>
                 <div class="dashboard-1">
                     <div class="dashboard-2">
