@@ -7,9 +7,13 @@ mat-drawer {
     width: 5%;
 }
 
+.hover :hover {
+    cursor: pointer !important;
+}
+
 .login {
     /* background-color: #364cca; */
-    background-image: linear-gradient(to left, rgb(68, 118, 255), rgb(26, 26, 168) );
+    background-image: linear-gradient(to left, rgb(68, 118, 255), rgb(26, 26, 168));
     height: 30vh;
     border-bottom-left-radius: 100px;
 }

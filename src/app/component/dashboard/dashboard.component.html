@@ -2,12 +2,12 @@
     <mat-drawer mode="side" opened>
         <div class="icon">
             <div class="icon-top">
-                <mat-icon>timer</mat-icon>
-                <a (click)="onList()"> <mat-icon>storage</mat-icon> </a>
-                <mat-icon>person_add</mat-icon>
+                <mat-icon class="hover">timer</mat-icon>
+                <a class="hover" (click)="onList()"> <mat-icon>storage</mat-icon> </a>
+                <mat-icon class="hover">person_add</mat-icon>
             </div>
             <div class="icon-bottom">
-                <a (click)="onAdd()"> <mat-icon>add</mat-icon> </a>
+                <a class="hover" (click)="onAdd()"> <mat-icon>add</mat-icon> </a>
                 <a href="" routerLink=".."> <mat-icon>exit_to_app</mat-icon></a>
             </div>
         </div>
@@ -20,8 +20,9 @@
                 <mat-icon class="back-arrow" (click)="changeRoute()" *ngIf="createProject">arrow_back_ios</mat-icon>
 
                 <h1 class="dashboard" *ngIf="graph">Dashboard</h1>
+                <h1 class="dashboard" *ngIf="projectList">Projects Listing</h1>
 
-                <div class="d-flex" *ngIf="projectList">
+                <!-- <div class="d-flex" *ngIf="projectList">
                     <div>
                         <h1 class="dashboard">Projects Listing</h1>
                     </div>
@@ -29,7 +30,7 @@
                         <h3 class="dashboard">Department</h3>
                         <h3 class="dashboard">Location</h3>
                     </div>
-                </div>
+                </div> -->
                 <h1 class="dashboard" *ngIf="createProject">Create Project</h1>
                 <div class="dashboard-1">
                     <div class="dashboard-2">
