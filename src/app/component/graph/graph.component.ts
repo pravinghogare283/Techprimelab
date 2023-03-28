@@ -12,6 +12,7 @@ export class GraphComponent implements OnInit {
   cancleCount: any;
   closeCount: any;
   startCount: any;
+  totalCount:any;
 
   c_strategy: any;
   r_strategy: any;
@@ -37,6 +38,7 @@ export class GraphComponent implements OnInit {
     this.cancleCount = localStorage.getItem('cancleCount');
     this.closeCount = localStorage.getItem('closeCount');
     this.startCount = localStorage.getItem('startCount');
+    this.totalCount = localStorage.getItem('total-projects');
   }
 
   grapgData() {
