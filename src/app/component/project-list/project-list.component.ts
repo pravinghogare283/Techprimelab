@@ -37,11 +37,13 @@ export class ProjectListComponent implements OnInit {
       const closed = this.projectList.filter((val: any) => val.status === 'Close');
       const cancled = this.projectList.filter((val: any) => val.status === 'Cancle');
       const registered = this.projectList.filter((val: any) => val.status === 'Registered');
+      const totalProjects = this.projectList.length;
 
       localStorage.setItem('regCount', registered.length);
       localStorage.setItem('cancleCount', cancled.length);
       localStorage.setItem('closeCount', closed.length);
       localStorage.setItem('startCount', started.length);
+      localStorage.setItem('total-projects', totalProjects);
 
       this.dataSource = new MatTableDataSource(this.projectList);
       this.dataSource.paginator = this.paginator;
