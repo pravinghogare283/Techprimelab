@@ -48,33 +48,29 @@ export class ProjectListComponent implements OnInit {
       this.dataSource.sort = this.sort;
 
       const s_close = this.projectList.filter((v: any) => v.department === 'Strategy' && v.status === 'Close');
-      const s_registered = this.projectList.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered')
+      const s_registered = this.projectList.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered');
       localStorage.setItem('s&c', s_close.length);
       localStorage.setItem('s&r', s_registered.length);
-      console.log(s_close.length)
-      console.log(s_registered.length)
 
-
-      const f_registered = this.projectList.filter((v: any) => v.department === 'Finance' && v.status === 'Registered')
+      const f_registered = this.projectList.filter((v: any) => v.department === 'Finance' && v.status === 'Registered');
       const f_close = this.projectList.filter((v: any) => v.department === 'Finance' && v.status === 'Close');
       localStorage.setItem('f&c', f_close.length);
       localStorage.setItem('f&r', f_registered.length);
 
       const m_close = this.projectList.filter((v: any) => v.department === 'Maintenance' && v.status === 'Close');
-      const m_registered = this.projectList.filter((v: any) => v.department === 'Maintenance' && v.status === 'Registered')
+      const m_registered = this.projectList.filter((v: any) => v.department === 'Maintenance' && v.status === 'Registered');
       localStorage.setItem('m&c', m_close.length);
       localStorage.setItem('m&r', m_registered.length);
 
       const sr_close = this.projectList.filter((v: any) => v.department === 'Strategy' && v.status === 'Close');
-      const sr_registered = this.projectList.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered')
+      const sr_registered = this.projectList.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered');
       localStorage.setItem('sr&c', sr_close.length);
       localStorage.setItem('sr&r', sr_registered.length);
 
       const q_close = this.projectList.filter((v: any) => v.department === 'Quality' && v.status === 'Close');
-      const q_registered = this.projectList.filter((v: any) => v.department === 'Quality' && v.status === 'Registered')
+      const q_registered = this.projectList.filter((v: any) => v.department === 'Quality' && v.status === 'Registered');
       localStorage.setItem('q&c', q_close.length);
       localStorage.setItem('q&r', q_registered.length);
-
     }, (err) => {
       console.log(err);
     });
