@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from "chart.js";
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-graph',
@@ -8,50 +9,78 @@ import { Chart } from "chart.js";
 })
 export class GraphComponent implements OnInit {
   public chart: Chart;
-  registeredCount: any;
-  cancleCount: any;
-  closeCount: any;
-  startCount: any;
-  totalCount:any;
+  data: any;
 
-  c_strategy: any;
-  r_strategy: any;
-  c_finance: any;
-  r_finance: any;
-  c_maintenance: any;
-  r_maintenance: any;
-  c_store: any;
-  r_store: any;
-  c_quality: any;
-  r_quality: any;
+  cancleCount: number;
+  closeCount: number;
+  startCount: number;
+  totalCount: number;
 
-  constructor() { }
+  c_strategy: number;
+  r_strategy: number;
+  c_finance: number;
+  r_finance: number;
+  c_maintenance: number;
+  r_maintenance: number;
+  c_store: number;
+  r_store: number;
+  c_quality: number;
+  r_quality: number;
+
+  constructor(private ser: RestService) {
+  }
 
   ngOnInit(): void {
-    this.grapgData();
-    this.barChart();
-    this.dataCounter();
+    this.projectList();
   }
 
-  dataCounter() {
-    this.registeredCount = localStorage.getItem('regCount');
-    this.cancleCount = localStorage.getItem('cancleCount');
-    this.closeCount = localStorage.getItem('closeCount');
-    this.startCount = localStorage.getItem('startCount');
-    this.totalCount = localStorage.getItem('total-projects');
-  }
+  projectList() {
+    this.ser.getProjects().subscribe((res) => {
+      this.data = res;
+      this.totalCount = this.data.length;
+      const started = this.data.filter((val: any) => val.status === 'Start');
+      this.startCount = started.length;
+      const closed = this.data.filter((val: any) => val.status === 'Close');
+      this.closeCount = closed.length;
+      const cancled = this.data.filter((val: any) => val.status === 'Cancle');
+      this.cancleCount = cancled.length;
 
-  grapgData() {
-    this.c_strategy = localStorage.getItem('s&c');
-    this.r_strategy = localStorage.getItem('s&r');
-    this.c_finance = localStorage.getItem('f&c');
-    this.r_finance = localStorage.getItem('f&r');
-    this.c_maintenance = localStorage.getItem('m&c');
-    this.r_maintenance = localStorage.getItem('m&r');
-    this.c_store = localStorage.getItem('sr&c');
-    this.r_store = localStorage.getItem('sr&r');
-    this.c_quality = localStorage.getItem('q&c');
-    this.r_quality = localStorage.getItem('q&r');
+      const s_close = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Close');
+      this.c_strategy = s_close.length;
+
+      const s_registered = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered');
+      this.r_strategy = s_registered.length;
+
+      const f_close = this.data.filter((v: any) => v.department === 'Finance' && v.status === 'Close');
+      this.c_finance = f_close.length;
+
+      const f_registered = this.data.filter((v: any) => v.department === 'Finance' && v.status === 'Registered');
+      this.r_finance = f_registered.length;
+
+      const m_close = this.data.filter((v: any) => v.department === 'Maintenance' && v.status === 'Close');
+      this.c_maintenance = m_close.length;
+
+      const m_registered = this.data.filter((v: any) => v.department === 'Maintenance' && v.status === 'Registered');
+      this.r_maintenance = m_registered.length;
+
+      const sr_close = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Close');
+      this.c_store = sr_close.length;
+
+      const sr_registered = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered');
+      this.c_store = sr_registered.length;
+
+      const q_close = this.data.filter((v: any) => v.department === 'Quality' && v.status === 'Close');
+      this.c_quality = q_close.length;
+
+      const q_registered = this.data.filter((v: any) => v.department === 'Quality' && v.status === 'Registered');
+      this.r_quality = q_registered.length;
+
+      // Graph Values Added :
+      this.barChart();
+      // Send data to service
+      this.ser.allData = this.data;
+
+    });
   }
 
   barChart() {
@@ -62,7 +91,7 @@ export class GraphComponent implements OnInit {
         datasets: [
           {
             label: "# of Votes",
-            data: [this.c_strategy, this.c_finance, this.c_maintenance, this.c_store, this.c_quality],
+            data: [this.r_strategy, this.r_finance, this.r_maintenance, this.c_store, this.r_quality],
             backgroundColor: [
               "blue", "blue", "blue",
               "blue", "blue"
@@ -70,7 +99,7 @@ export class GraphComponent implements OnInit {
           },
           {
             label: "# of Votes",
-            data: [this.r_strategy, this.r_finance, this.r_maintenance, this.r_store, this.r_quality],
+            data: [this.c_strategy, this.c_finance, this.c_maintenance, this.c_store, this.c_quality],
             backgroundColor: [
               "green", "green", "green",
               "green", "green"

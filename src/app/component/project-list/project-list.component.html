@@ -67,7 +67,7 @@
     </div>
 </div>
 
-<div class="mobile" *ngFor="let dt of projectList">
+<div class="mobile" *ngFor="let dt of dataSource">
     <mat-card class="mt-4">
         <mat-card-content>
             <div class="heading mb-2">
@@ -106,7 +106,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let d of projectList">
+        <tr *ngFor="let d of dataSource">
             <td data-label="Project Name">{{d.projectName}}</td>
             <td data-label="Reason">{{d.reason}}</td>
             <td data-label="Type">{{d.type}}</td>

@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RestService {
+  allData:any;
 
   constructor(private http: HttpClient) { }
 
