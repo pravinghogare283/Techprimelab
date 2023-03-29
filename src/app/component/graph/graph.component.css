@@ -64,6 +64,10 @@ h2 {
         width: 300px;
         display: block;
     }
+
+    h1 {
+        font-size: x-large !important;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -74,6 +78,10 @@ h2 {
     .graph {
         width: 250px;
         display: block;
+    }
+
+    h1 {
+        font-size: x-large !important;
     }
 }
 
@@ -86,6 +94,10 @@ h2 {
         width: 240px !important;
         display: block;
     }
+
+    h1 {
+        font-size: x-large !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -96,5 +108,9 @@ h2 {
     .graph {
         width: 300px;
         display: block;
+    }
+
+    h1 {
+        font-size: x-large !important;
     }
 }

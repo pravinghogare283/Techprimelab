@@ -10,6 +10,8 @@ import { RestService } from 'src/app/services/rest.service';
 export class GraphComponent implements OnInit {
   public chart: Chart;
   data: any;
+  delay: any;
+  delayDate: any;
 
   cancleCount: number;
   closeCount: number;
@@ -26,6 +28,8 @@ export class GraphComponent implements OnInit {
   r_store: number;
   c_quality: number;
   r_quality: number;
+  r_lity: any;
+  newDate: any = [];
 
   constructor(private ser: RestService) {
   }
@@ -48,38 +52,47 @@ export class GraphComponent implements OnInit {
       const s_close = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Close');
       this.c_strategy = s_close.length;
 
-      const s_registered = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered');
+      const s_registered = this.data.filter((v: any) => v.department === 'Strategy');
       this.r_strategy = s_registered.length;
 
       const f_close = this.data.filter((v: any) => v.department === 'Finance' && v.status === 'Close');
       this.c_finance = f_close.length;
 
-      const f_registered = this.data.filter((v: any) => v.department === 'Finance' && v.status === 'Registered');
+      const f_registered = this.data.filter((v: any) => v.department === 'Finance');
       this.r_finance = f_registered.length;
 
       const m_close = this.data.filter((v: any) => v.department === 'Maintenance' && v.status === 'Close');
       this.c_maintenance = m_close.length;
 
-      const m_registered = this.data.filter((v: any) => v.department === 'Maintenance' && v.status === 'Registered');
+      const m_registered = this.data.filter((v: any) => v.department === 'Maintenance');
       this.r_maintenance = m_registered.length;
 
       const sr_close = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Close');
       this.c_store = sr_close.length;
 
-      const sr_registered = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Registered');
+      const sr_registered = this.data.filter((v: any) => v.department === 'Strategy');
       this.c_store = sr_registered.length;
 
       const q_close = this.data.filter((v: any) => v.department === 'Quality' && v.status === 'Close');
       this.c_quality = q_close.length;
 
-      const q_registered = this.data.filter((v: any) => v.department === 'Quality' && v.status === 'Registered');
+      const q_registered = this.data.filter((v: any) => v.department === 'Quality');
       this.r_quality = q_registered.length;
+
+      const q_tered = this.data.filter((v: any) => {
+        let today = new Date();
+        let date = new Date(v.endDate);
+        this.delay = today > date;
+        if (today > date) {
+          this.newDate.push(this.delay);
+          this.delayDate = this.newDate.length;
+        }
+      });
 
       // Graph Values Added :
       this.barChart();
       // Send data to service
       this.ser.allData = this.data;
-
     });
   }
 
