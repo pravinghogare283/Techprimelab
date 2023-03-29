@@ -83,9 +83,9 @@
             <p>Location: <span>{{dt.location}}</span></p>
             <p>Status: <span>{{dt.status}}</span></p>
             <div class="buttons mt-3">
-                <button mat-flat-button color="primary">Start</button>
-                <button mat-flat-button>Close</button>
-                <button mat-flat-button>Cancle</button>
+                <button mat-flat-button (click)="onClick(dt,'Start')" color="primary">Start</button>
+                <button mat-flat-button (click)="onClick(dt,'Close')">Close</button>
+                <button mat-flat-button (click)="onClick(dt,'Cancle')">Cancle</button>
             </div>
         </mat-card-content>
     </mat-card>

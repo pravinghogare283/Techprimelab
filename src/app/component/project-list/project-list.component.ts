@@ -16,6 +16,7 @@ export class ProjectListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  projectList: any;
 
   constructor(private ser: RestService, private route: Router) { }
 
@@ -28,10 +29,16 @@ export class ProjectListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  // Get All Project List :
   allProjects() {
-    this.dataSource = this.ser.allData;
-    console.log(this.dataSource)
+    // this.dataSource = this.ser.allData;
+    // console.log(this.dataSource);
+
+    this.ser.getProjects().subscribe((res) => {
+      this.projectList = res;
+      this.dataSource = new MatTableDataSource(this.projectList);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   onClick(el: any, label: string) {
