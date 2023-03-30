@@ -36,7 +36,6 @@ h2 {
 .graph {
     width: 400px;
     display: block;
-    padding-bottom: 40px;
 }
 
 @media(max-width: 767px) {
@@ -56,6 +55,10 @@ h2 {
 
     .project {
         padding: 0px;
+    }
+
+    .graph {
+        padding-bottom: 40px;
     }
 }
 
