@@ -1,11 +1,11 @@
 .login {
     /* background-color: #3d55db; */
-    background-image: linear-gradient(to left, rgb(68, 118, 255), rgb(26, 26, 168) );
+    background-image: linear-gradient(to left, rgb(68, 118, 255), rgb(26, 26, 168));
     height: 70vh;
     border-bottom-left-radius: 100px;
 }
 
-.home { 
+.home {
     height: 100%;
 }
 
@@ -51,16 +51,41 @@ img {
     aspect-ratio: 1.5;
 }
 
+::ng-deep button.mat-focus-indicator.mat-raised-button.mat-button-base.mat-primary {
+    background-color: #36a8ca !important;
+    border-radius: 20px !important;
+    border: none !important;
+    width: 12em;
+}
+
 @media(max-width: 500px) {
+
+    .login {
+        height: 40vh;
+    }
+
     img {
-        width: 40%;
+        width: 35%;
         aspect-ratio: 1.5;
+    }
+
+    .center-component {
+        top:25%
     }
 }
 
 @media(max-width: 768px) {
+
+    .login {
+        height: 40vh;
+    }
+
     img {
-        width: 50%;
+        width: 40%;
         aspect-ratio: 1.5;
+    }
+
+    .center-component {
+        top:40%
     }
 }
