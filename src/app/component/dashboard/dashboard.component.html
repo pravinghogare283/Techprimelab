@@ -19,20 +19,17 @@
                 <mat-icon class="back-arrow" (click)="changeRoute()" *ngIf="projectList">arrow_back_ios</mat-icon>
                 <mat-icon class="back-arrow" (click)="changeRoute()" *ngIf="createProject">arrow_back_ios</mat-icon>
 
-                <h1 class="dashboard" *ngIf="graph">Dashboard</h1>
-                <h1 class="dashboard" *ngIf="projectList">Projects Listing</h1>
-
-                <!-- <div class="d-flex" *ngIf="projectList">
+                <div class="d-flex">
                     <div>
-                        <h1 class="dashboard">Projects Listing</h1>
+                        <h1 class="dashboard" *ngIf="graph">Dashboard</h1>
+                        <h1 class="dashboard" *ngIf="projectList">Projects Listing</h1>
+                        <h1 class="dashboard" *ngIf="createProject">Create Project</h1>
                     </div>
-                    <div class="dash-sorting">
-                        <h3 class="dashboard">Department</h3>
-                        <h3 class="dashboard">Location</h3>
+                    <div class="mobile-view">
+                        <a href="" routerLink=".."> <mat-icon>exit_to_app</mat-icon></a>
                     </div>
-                </div> -->
-                <h1 class="dashboard" *ngIf="createProject">Create Project</h1>
-                <div class="dashboard-1">
+                </div>
+                <div class="dashboard-1 pb-2">
                     <div class="dashboard-2">
                         <div class="dashboard-3">
                             <div>
@@ -54,5 +51,18 @@
         <!-- <mat-icon>keyboard_arrow_left</mat-icon>
         <mat-icon>arrow_back_ios</mat-icon>
         <mat-icon>person_outline</mat-icon> -->
+
+        <div class="sidenav">
+            <div class="icon">
+                <div class="icon-top">
+                    <mat-icon class="hover">timer</mat-icon>
+                    <a class="hover" (click)="onAdd()"> <mat-icon>add</mat-icon> </a>
+                    <a class="hover" (click)="onList()"> <mat-icon>storage</mat-icon> </a>
+                </div>
+            </div>
+        </div>
+
+
     </mat-drawer-content>
+
 </mat-drawer-container>

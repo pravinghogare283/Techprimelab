@@ -52,6 +52,10 @@ h2 {
         width: 300px;
         display: block;
     }
+
+    .project {
+        padding: 0px;
+    }
 }
 
 @media screen and (max-width: 425px) {
