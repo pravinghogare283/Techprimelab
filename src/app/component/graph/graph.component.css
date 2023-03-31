@@ -40,11 +40,10 @@ h2 {
 
 @media(max-width: 767px) {
     .home {
-        flex-direction: column;
+        overflow: scroll;
     }
 
     .project-count {
-        width: 200px;
         margin-top: 10px;
     }
 
@@ -64,7 +63,6 @@ h2 {
 
 @media screen and (max-width: 425px) {
     .project-count {
-        width: 288px !important;
         margin-top: 10px;
     }
 
@@ -79,10 +77,6 @@ h2 {
 }
 
 @media screen and (max-width: 375px) {
-    .project-count {
-        width: 244px !important;
-    }
-
     .graph {
         width: 250px;
         display: block;
@@ -94,10 +88,6 @@ h2 {
 }
 
 @media screen and (max-width: 320px) {
-    .project-count {
-        width: 195px !important;
-    }
-
     .graph {
         width: 240px !important;
         display: block;
@@ -111,6 +101,9 @@ h2 {
 @media screen and (max-width: 768px) {
     .project-count {
         width: 100px;
+        padding: 10px;
+        margin: 5px;
+        height: 101px
     }
 
     .graph {

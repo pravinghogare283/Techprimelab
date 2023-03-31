@@ -67,11 +67,11 @@ export class GraphComponent implements OnInit {
       const m_registered = this.data.filter((v: any) => v.department === 'Maintenance');
       this.r_maintenance = m_registered.length;
 
-      const sr_close = this.data.filter((v: any) => v.department === 'Strategy' && v.status === 'Close');
+      const sr_close = this.data.filter((v: any) => v.department === 'Store' && v.status === 'Close');
       this.c_store = sr_close.length;
 
-      const sr_registered = this.data.filter((v: any) => v.department === 'Strategy');
-      this.c_store = sr_registered.length;
+      const sr_registered = this.data.filter((v: any) => v.department === 'Store');
+      this.r_store = sr_registered.length;
 
       const q_close = this.data.filter((v: any) => v.department === 'Quality' && v.status === 'Close');
       this.c_quality = q_close.length;
@@ -100,11 +100,11 @@ export class GraphComponent implements OnInit {
     this.chart = new Chart("canvas", {
       type: "bar",
       data: {
-        labels: ["STR", "FIN", "QLT", "MAN", "STO"],
+        labels: ["STR", "FIN", "STO", "MAN", "QLT"],
         datasets: [
           {
             label: "# of Votes",
-            data: [this.r_strategy, this.r_finance, this.r_maintenance, this.c_store, this.r_quality],
+            data: [this.r_strategy, this.r_finance, this.r_store, this.r_maintenance, this.r_quality],
             backgroundColor: [
               "blue", "blue", "blue",
               "blue", "blue"
@@ -112,7 +112,7 @@ export class GraphComponent implements OnInit {
           },
           {
             label: "# of Votes",
-            data: [this.c_strategy, this.c_finance, this.c_maintenance, this.c_store, this.c_quality],
+            data: [this.c_strategy, this.c_finance, this.c_store, this.c_maintenance, this.c_quality],
             backgroundColor: [
               "green", "green", "green",
               "green", "green"
