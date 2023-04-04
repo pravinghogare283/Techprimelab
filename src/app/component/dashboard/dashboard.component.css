@@ -146,4 +146,13 @@ mat-drawer {
         align-items: center;
         color: gray !important;
     }
+
+    .login {
+        height: 15vh;
+        border-radius: 15px;
+    }
+
+    .dashboard-1 {
+        padding: 0;
+    }
 }

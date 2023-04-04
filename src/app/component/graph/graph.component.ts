@@ -103,7 +103,7 @@ export class GraphComponent implements OnInit {
         labels: ["STR", "FIN", "STO", "MAN", "QLT"],
         datasets: [
           {
-            label: "# of Votes",
+            label: "Registered Projects",
             data: [this.r_strategy, this.r_finance, this.r_store, this.r_maintenance, this.r_quality],
             backgroundColor: [
               "blue", "blue", "blue",
@@ -111,7 +111,7 @@ export class GraphComponent implements OnInit {
             ]
           },
           {
-            label: "# of Votes",
+            label: "Closed Projects",
             data: [this.c_strategy, this.c_finance, this.c_store, this.c_maintenance, this.c_quality],
             backgroundColor: [
               "green", "green", "green",
